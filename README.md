@@ -16,7 +16,6 @@ Welcome to my deep learning repository! This project implements a robust scene c
 - **Model Checkpoint:** Successfully saved fine-tuned weights (`resnet18_intel.pt`, ~44.7 MB) to disk.
 
 
-- **Week 6:**
 # 🩺 Pediatric Pneumonia Classification in Chest X-Rays (ResNet-18)
 
 ![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg)
@@ -33,8 +32,8 @@ An end-to-end, clinically calibrated computer vision pipeline fine-tuning a **Re
 ### Grad-CAM Model Interpretability & Shortcut Detection
 > Heatmaps generated on the final convolutional block (`layer4`) show strong intra-pulmonary focus for correct predictions, while identifying potential non-lung shortcut dependencies on false positives.
 
-<!-- Replace the image path below with your actual image file or URL in your repository -->
-![Grad-CAM Visualizations](https://via.placeholder.com/800x400.png?text=Place+Your+Grad-CAM+Heatmap+Grid+Image+Here)
+<img width="594" height="404" alt="image" src="https://github.com/user-attachments/assets/151e5f9a-14b6-49b8-81ce-cc2593b767d5" />
+
 
 ---
 
