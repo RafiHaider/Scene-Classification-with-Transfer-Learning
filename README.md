@@ -15,7 +15,7 @@ Welcome to my deep learning repository! This project implements a robust scene c
 - **Most Instructive Error:** A high-altitude snowy mountain peak was misclassified as a glacier because of overlapping surface ice and rugged terrain characteristics.
 - **Model Checkpoint:** Successfully saved fine-tuned weights (`resnet18_intel.pt`, ~44.7 MB) to disk.
 
-
+# Week 6 - Medical Imaging
 # 🩺 Pediatric Pneumonia Classification in Chest X-Rays (ResNet-18)
 
 ![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg)
