@@ -99,7 +99,7 @@ An end-to-end, clinically calibrated computer vision pipeline fine-tuning a **Re
 ├── notebook.ipynb          # Full execution notebook (Data audit -> Grad-CAM)
 ├── README.md               # Datasheet, Model Card & Governance documentation
 └── assets/                 # Sample heatmaps and evaluation charts
-
+```
 # **Week 7: Text and Multimodal AI**
 
 - **Text Classifier**: Benchmark Dataset, 1,000+ texts, Macro-F1 0.89 (word) vs 0.92 (char)
