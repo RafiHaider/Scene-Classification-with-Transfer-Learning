@@ -108,7 +108,7 @@ An end-to-end, clinically calibrated computer vision pipeline fine-tuning a **Re
 - **Regex Fields Extracted**: `CNIC`, `Mobile Number`, `Invoice No`, `Amount`, `Date`; False positives tested with negative samples
 - **OCR**: Character Error Rate (CER) raw 0.032 $\rightarrow$ after correction rules CER 0.000 (0.062 $\rightarrow$ 0.000 on digit substitution)
 - **Pipeline**: Image vision model ($P(\text{Pneumonia}) = 0.88$) + Text evidence (`fever`, `breath`) $\rightarrow$ Structured JSON case record with automated decision (`REFER`)
-- **Privacy**: CNIC, phone, and email masked *before* logging or evidence extraction
+- **Privacy**: CNIC, phone, and email masked before logging
 
 ---
 
@@ -118,3 +118,25 @@ An end-to-end, clinically calibrated computer vision pipeline fine-tuning a **Re
 Ensures sensitive user identifiers are redacted before downstream API/model processing:
 ```json
 "note_masked": "Child aged 4, fever for 3 days and fast breath. Guardian mobile [PHONE]."
+```
+#### 2. OCR Post-Processing Heuristics
+Repairs digit-letter confusion in scanned invoices:
+- `Invoice N0. 4417` $\rightarrow$ `Invoice No. 4417` (CER reduced from **0.062** to **0.000**)
+
+#### 3. Multimodal Clinical Triage Pipeline
+```json
+{
+  "image": "invoice.png",
+  "image_probabilities": { 
+    "Normal": 0.12, 
+    "Pneumonia": 0.88 
+  },
+  "decision": "REFER",
+  "reasons": [
+    "image model: P(Pneumonia) = 0.88",
+    "note mentions: fever, breath"
+  ],
+  "disclaimer": "Decision support only; a qualified human decides."
+}
+
+
