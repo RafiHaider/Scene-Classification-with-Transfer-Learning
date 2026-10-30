@@ -99,3 +99,22 @@ An end-to-end, clinically calibrated computer vision pipeline fine-tuning a **Re
 ├── notebook.ipynb          # Full execution notebook (Data audit -> Grad-CAM)
 ├── README.md               # Datasheet, Model Card & Governance documentation
 └── assets/                 # Sample heatmaps and evaluation charts
+
+# **Week 7: Text and Multimodal AI**
+
+- **Text Classifier**: Benchmark Dataset, 1,000+ texts, Macro-F1 0.89 (word) vs 0.92 (char)
+- **Top Positive / Negative Features**: `['urgent', 'fever', 'cough', 'invoice']` / `['routine', 'thanks', 'ok']`
+- **NER on My Domain**: Out-of-the-box F1 0.65 $\rightarrow$ with Entity Ruler F1 0.94
+- **Regex Fields Extracted**: `CNIC`, `Mobile Number`, `Invoice No`, `Amount`, `Date`; False positives tested with negative samples
+- **OCR**: Character Error Rate (CER) raw 0.032 $\rightarrow$ after correction rules CER 0.000 (0.062 $\rightarrow$ 0.000 on digit substitution)
+- **Pipeline**: Image vision model ($P(\text{Pneumonia}) = 0.88$) + Text evidence (`fever`, `breath`) $\rightarrow$ Structured JSON case record with automated decision (`REFER`)
+- **Privacy**: CNIC, phone, and email masked *before* logging or evidence extraction
+
+---
+
+### 💡 Key Technical Highlights
+
+#### 1. Context-Aware PII Masking
+Ensures sensitive user identifiers are redacted before downstream API/model processing:
+```json
+"note_masked": "Child aged 4, fever for 3 days and fast breath. Guardian mobile [PHONE]."
