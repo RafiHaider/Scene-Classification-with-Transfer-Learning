@@ -139,7 +139,7 @@ Repairs digit-letter confusion in scanned invoices:
   "disclaimer": "Decision support only; a qualified human decides."
 }
 ```
-
+# Week 8
 # 🚀 P2-API: FastAPI Deep Learning Inference Service
 
 A production-ready FastAPI backend serving deep learning image classification models with robust input validation, error handling, automated testing, and latency benchmarking. Developed for Lab 8 coursework.
